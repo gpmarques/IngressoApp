@@ -22,10 +22,12 @@ class ViewCadastro: UIViewController {
         let labelLogin = UILabel(frame: CGRectMake(50, 50, view.frame.width * 0.471014, view.frame.width * 0.169082))
         let labelSenha = UILabel(frame: CGRectMake(50, 100, view.frame.width * 0.471014, view.frame.width * 0.169082))
         let labelConfirmarSenha = UILabel(frame: CGRectMake(50, 100, view.frame.width * 0.471014, view.frame.width * 0.169082))
+        let labelCadastro = UILabel(frame: CGRectMake(50, 100, view.frame.width * 0.471014, view.frame.width * 0.169082))
         let nomeTextField = UITextField(frame: CGRectMake(100, 100, 250, 40))
         let loginTextField = UITextField(frame: CGRectMake(100, 150, 250, 40))
         let senhaTextField = UITextField(frame: CGRectMake(100, 100, 250, 40))
         let confirmarTextField = UITextField(frame: CGRectMake(100, 150, 250, 40))
+        
         
         
         
@@ -92,6 +94,13 @@ class ViewCadastro: UIViewController {
         labelSenha.text = "Senha:"
         labelSenha.textColor = UIColor.blackColor()
         
+        
+        labelCadastro.center = CGPointMake(view.frame.width/2, (view.frame.height/8) - 40)
+        labelCadastro.textAlignment = NSTextAlignment.Center
+        labelCadastro.text = "CADASTRO"
+        labelCadastro.textColor = UIColor.blackColor()
+
+        
         //Configuraçoes Buttons
         buttonSalvar.frame = CGRectMake(0,0,
             view.frame.width * 0.487923, view.frame.width * 0.169082)
@@ -102,7 +111,7 @@ class ViewCadastro: UIViewController {
         buttonSalvar.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
 
     
-
+        // --------------------------- ADICIONANDO NA TELA OS OBJETOS ---------------------------
         
         
         self.view.addSubview(nomeTextField)
@@ -114,6 +123,7 @@ class ViewCadastro: UIViewController {
         self.view.addSubview(labelLogin)
         self.view.addSubview(labelSenha)
         self.view.addSubview(labelConfirmarSenha)
+        self.view.addSubview(labelCadastro)
         
         
 
