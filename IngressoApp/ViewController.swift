@@ -83,7 +83,6 @@ class ViewController: UIViewController {
         buttonCadastro.addTarget(self,action: "cadastroAction:", forControlEvents: UIControlEvents.TouchUpInside)
         buttonCadastro.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         self.view.addSubview(buttonCadastro)
-        buttonCadastro.imageView
         // Do any additional setup after loading the view, typically from a nib.
     }
 
