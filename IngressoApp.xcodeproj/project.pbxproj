@@ -10,6 +10,8 @@
 		8AB9FE2E1C7B508300BA869A /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9FE2D1C7B508300BA869A /* Classes.swift */; };
 		8AB9FE321C7B6FEA00BA869A /* ViewCadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9FE311C7B6FEA00BA869A /* ViewCadastro.swift */; };
 		8AB9FE361C7B717A00BA869A /* ViewEventos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9FE351C7B717A00BA869A /* ViewEventos.swift */; };
+		D1269B101C7CB9AA00CEB653 /* ViewPalco.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1269B0F1C7CB9AA00CEB653 /* ViewPalco.swift */; };
+		D1412C2F1C7CCF3200EF3D9B /* ViewPagamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1412C2E1C7CCF3200EF3D9B /* ViewPagamento.swift */; };
 		D1D17F751C779CB2004745B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D17F741C779CB2004745B1 /* AppDelegate.swift */; };
 		D1D17F771C779CB2004745B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D17F761C779CB2004745B1 /* ViewController.swift */; };
 		D1D17F7A1C779CB2004745B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1D17F781C779CB2004745B1 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 		8AB9FE2D1C7B508300BA869A /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Classes.swift; path = IngressoApp/Classes.swift; sourceTree = "<group>"; };
 		8AB9FE311C7B6FEA00BA869A /* ViewCadastro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewCadastro.swift; path = IngressoApp/ViewCadastro.swift; sourceTree = "<group>"; };
 		8AB9FE351C7B717A00BA869A /* ViewEventos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventos.swift; sourceTree = "<group>"; };
+		D1269B0F1C7CB9AA00CEB653 /* ViewPalco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPalco.swift; sourceTree = "<group>"; };
+		D1412C2E1C7CCF3200EF3D9B /* ViewPagamento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagamento.swift; sourceTree = "<group>"; };
 		D1D17F711C779CB2004745B1 /* IngressoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IngressoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1D17F741C779CB2004745B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1D17F761C779CB2004745B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = IngressoApp/ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 				D1D17F761C779CB2004745B1 /* ViewController.swift */,
 				8AB9FE311C7B6FEA00BA869A /* ViewCadastro.swift */,
 				8AB9FE351C7B717A00BA869A /* ViewEventos.swift */,
+				D1412C2E1C7CCF3200EF3D9B /* ViewPagamento.swift */,
+				D1269B0F1C7CB9AA00CEB653 /* ViewPalco.swift */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -162,8 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1412C2F1C7CCF3200EF3D9B /* ViewPagamento.swift in Sources */,
 				D1D17F771C779CB2004745B1 /* ViewController.swift in Sources */,
 				8AB9FE361C7B717A00BA869A /* ViewEventos.swift in Sources */,
+				D1269B101C7CB9AA00CEB653 /* ViewPalco.swift in Sources */,
 				8AB9FE321C7B6FEA00BA869A /* ViewCadastro.swift in Sources */,
 				D1D17F751C779CB2004745B1 /* AppDelegate.swift in Sources */,
 				8AB9FE2E1C7B508300BA869A /* Classes.swift in Sources */,
