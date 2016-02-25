@@ -36,10 +36,6 @@ class ViewCadastro: UIViewController {
         navigationItem.leftBarButtonItem = leftButton
         
         self.title = "Cadastro"
-        
-
-        
-
 
         //CONFIGURACOES NAVIGATION BAR
         navigationBar.backgroundColor = UIColor(red: 255/255, green: 252/255, blue: 243/255, alpha: 1)
@@ -113,8 +109,6 @@ class ViewCadastro: UIViewController {
         self.view.addSubview(buttonSalvar)
         
  
-
-        
 
                 // Do any additional setup after loading the view.
     }

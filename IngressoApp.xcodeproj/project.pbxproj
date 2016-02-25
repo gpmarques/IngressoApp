@@ -14,7 +14,6 @@
 		8ABA510B1C7F781100B57E8E /* TicketsLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABA510A1C7F781100B57E8E /* TicketsLogo.png */; };
 		D1269B101C7CB9AA00CEB653 /* ViewPalco.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1269B0F1C7CB9AA00CEB653 /* ViewPalco.swift */; };
 		D1412C2F1C7CCF3200EF3D9B /* ViewPagamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1412C2E1C7CCF3200EF3D9B /* ViewPagamento.swift */; };
-		D1412C311C7E2B6F00EF3D9B /* deadpool.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1412C301C7E2B6F00EF3D9B /* deadpool.jpg */; };
 		D1D17F751C779CB2004745B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D17F741C779CB2004745B1 /* AppDelegate.swift */; };
 		D1D17F771C779CB2004745B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D17F761C779CB2004745B1 /* ViewController.swift */; };
 		D1D17F7A1C779CB2004745B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1D17F781C779CB2004745B1 /* Main.storyboard */; };
@@ -30,7 +29,6 @@
 		8ABA510A1C7F781100B57E8E /* TicketsLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TicketsLogo.png; sourceTree = "<group>"; };
 		D1269B0F1C7CB9AA00CEB653 /* ViewPalco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPalco.swift; sourceTree = "<group>"; };
 		D1412C2E1C7CCF3200EF3D9B /* ViewPagamento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagamento.swift; sourceTree = "<group>"; };
-		D1412C301C7E2B6F00EF3D9B /* deadpool.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = deadpool.jpg; path = ../deadpool.jpg; sourceTree = "<group>"; };
 		D1D17F711C779CB2004745B1 /* IngressoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IngressoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1D17F741C779CB2004745B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1D17F761C779CB2004745B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = IngressoApp/ViewController.swift; sourceTree = "<group>"; };
@@ -98,8 +96,6 @@
 				D1D17F741C779CB2004745B1 /* AppDelegate.swift */,
 				D1D17F781C779CB2004745B1 /* Main.storyboard */,
 				D1D17F7B1C779CB2004745B1 /* Assets.xcassets */,
-				D1412C301C7E2B6F00EF3D9B /* deadpool.jpg */,
-
 				8ABA510A1C7F781100B57E8E /* TicketsLogo.png */,
 				D1D17F7D1C779CB2004745B1 /* LaunchScreen.storyboard */,
 				D1D17F801C779CB2004745B1 /* Info.plist */,
@@ -169,7 +165,6 @@
 				D1D17F7C1C779CB2004745B1 /* Assets.xcassets in Resources */,
 				8ABA510B1C7F781100B57E8E /* TicketsLogo.png in Resources */,
 				D1D17F7A1C779CB2004745B1 /* Main.storyboard in Resources */,
-				D1412C311C7E2B6F00EF3D9B /* deadpool.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

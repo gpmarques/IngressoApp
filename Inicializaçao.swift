@@ -12,10 +12,7 @@ var lugares = [Lugar(fileira: "A", numero: 1),Lugar(fileira: "A", numero: 2),Lug
 
 let sessao = Sessao(nomeEvento: "Cassia eller", horario: "21:00", qtdLugaresDisponiveis: lugares.count, lugares: lugares)
 
-public var usuariosArray = [Usuario(nome: "Andre Parente", email: "Andremachadoparente@gmail.com", senha: "andre502", qtdIngresso: 0),Usuario(nome: "Guilherme Marques", email: "gpmarques@gmail.com", senha: "guilherme502", qtdIngresso: 0),Usuario(nome: "Ana Carolina Cardoso", email: "cardoso.aana@gmail.com", senha: "ana502", qtdIngresso: 0)]
-
-
-
+public var usuariosArray = [Usuario(nome: "Andre Parente", email: "Andremachadoparente@gmail.com", senha: "andre502", qtdIngresso: 0),Usuario(nome: "Guilherme Marques", email: "gpmarques@gmail.com", senha: "guilherme502", qtdIngresso: 0),Usuario(nome: "Ana Carolina Cardoso", email: "cardoso.aana@gmail.com", senha: "ana502", qtdIngresso: 0), Usuario(nome: "Teste", email: "Teste", senha: "teste", qtdIngresso: 0)]
 
 //INICIALIZACAO TESTE!!!!
 
