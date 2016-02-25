@@ -21,6 +21,8 @@ class ViewCadastro: UIViewController {
         
         super.viewDidLoad()
         
+        self.navigationController?.navigationBarHidden = false
+        
         view.backgroundColor = UIColor.whiteColor()
 
 

@@ -21,10 +21,13 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
+        self.navigationController?.navigationBarHidden = true
+        
          //DECLARACAO E INICIALIZAÇAO DOS BUTTONS, LABELS, CAIXAS DE TEXTO
         
         let buttonOk = UIButton(type: UIButtonType.System) as UIButton
         let buttonCadastro = UIButton(type: UIButtonType.System) as UIButton
+
 //        let labelLogin = UILabel(frame: CGRectMake(50, 50, view.frame.width * 0.471014, view.frame.width * 0.169082))
 //        let labelSenha = UILabel(frame: CGRectMake(50, 100, view.frame.width * 0.471014, view.frame.width * 0.169082))
         

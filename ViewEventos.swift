@@ -11,6 +11,9 @@ import UIKit
 class ViewEventos: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     var collectionView: UICollectionView!
+    let nome = ["Batman"," O hobbit"]
+    let nomeImagem = ["Imagem Batman", "Imagem Hobbit"]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,26 +22,32 @@ class ViewEventos: UIViewController, UICollectionViewDelegateFlowLayout, UIColle
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 90, height: 120)
+        layout.itemSize = CGSize(width: self.view.frame.width, height: 200)
         
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView!.registerClass(RDCell.self, forCellWithReuseIdentifier: "Cell")
-        collectionView.backgroundColor = UIColor.whiteColor()
+        collectionView.backgroundColor = UIColor.blackColor()
         self.view.addSubview(collectionView)
         
-        // Do any additional setup after loading the view.
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 14
+        return 2
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    
+     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath ) -> UICollectionViewCell{
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! RDCell
-        cell.backgroundColor = UIColor.orangeColor()
+
+        cell.textLabel.text = nome[indexPath.row]
+        cell.imageView.image = UIImage(named: nomeImagem[indexPath.row])
+    
+        
         return cell
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,19 +56,33 @@ class ViewEventos: UIViewController, UICollectionViewDelegateFlowLayout, UIColle
     }
     
     class RDCell: UICollectionViewCell {
+       
         
+        var textLabel: UILabel!
+        var imageView: UIImageView!
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            
+            imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height - 5))
+            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            contentView.addSubview(imageView)
+            
+            textLabel = UILabel(frame: CGRect(x: 0, y: imageView.frame.size.height, width: frame.size.width - 13, height: frame.size.height/15 + 6))
+            textLabel.center = CGPointMake(frame.size.width/2, frame.size.height)
+            textLabel.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize())
+            textLabel.textAlignment = .Left
+            textLabel.backgroundColor = UIColor.blackColor()
+            textLabel.textColor = UIColor.whiteColor()
+            contentView.addSubview(textLabel)
+        }
+
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
         
     
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
