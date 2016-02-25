@@ -30,11 +30,11 @@ public class Sessao {
     
     public var lugares: [Lugar]!
     public var qtdLugaresDisponiveis: Int!
-    var horario: time_t!
+    var horario: String!
     let preco = 50
     public var nomeEvento: String!
     
-    init(nomeEvento: String, horario: time_t,qtdLugaresDisponiveis: Int, lugares: [Lugar]) {
+    init(nomeEvento: String, horario: String,qtdLugaresDisponiveis: Int, lugares: [Lugar]) {
         self.nomeEvento = nomeEvento
         self.horario = horario
         self.qtdLugaresDisponiveis = qtdLugaresDisponiveis
@@ -49,7 +49,15 @@ public class Usuario {
     var email: String!
     private var senha: String!
     public var qtdIngresso: Int!
-    public var sessaoComprada: [Sessao]!
+    public var sessaoComprada: Sessao!
+    
+    
+    init(nome: String, email: String,senha: String,qtdIngresso: Int) {
+        self.nome = nome
+        self.senha = senha
+        self.email = email
+        self.qtdIngresso = qtdIngresso
+    }
     
     public func setNomeUsuario(nome: String) {
         self.nome = nome
@@ -88,3 +96,4 @@ public class Usuario {
         }
     }
 }
+

@@ -14,51 +14,42 @@ import UIKit
 
 class ViewCadastro: UIViewController {
     
-    
-    
+   
+
+
+    let nomeTextField = UITextField( frame: CGRectMake(38, 200, 300, 40) )
+    let loginTextField = UITextField( frame: CGRectMake(38, 255, 300, 40) )
+    let senhaTextField = UITextField( frame: CGRectMake(38, 309, 300, 40) )
+    let confirmarTextField = UITextField( frame: CGRectMake(38, 364, 300, 40) )
+    let buttonSalvar = UIButton( type: UIButtonType.System) as UIButton
+
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 255/255, green: 252/255, blue: 243/255, alpha: 1)
+        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 44+statusBarHeight)) // Offset by 20 pixels vertically to take the status bar into account
+        let navigationItem = UINavigationItem()
+        navigationItem.title = "Cadastro"
+        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: "voltarAction")
+        navigationItem.leftBarButtonItem = leftButton
         
-        self.navigationController?.navigationBarHidden = false
+        self.title = "Cadastro"
         
-        view.backgroundColor = UIColor.whiteColor()
+
+        
 
 
-        let buttonSalvar = UIButton( type: UIButtonType.System) as UIButton
+        //CONFIGURACOES NAVIGATION BAR
+        navigationBar.backgroundColor = UIColor(red: 255/255, green: 252/255, blue: 243/255, alpha: 1)
+        navigationBar.items = [navigationItem]
+        self.view.addSubview(navigationBar)
 
-/*
-        
-        let labelNome = UILabel( frame: CGRectMake(50, 50,
-                                       view.frame.width * 0.471014,
-                                       view.frame.width * 0.169082 ) )
-        
-        let labelLogin = UILabel( frame: CGRectMake(50, 50,
-                                  view.frame.width * 0.471014,
-                                  view.frame.width * 0.169082 ) )
-        
-        let labelSenha = UILabel( frame: CGRectMake(50, 100,
-                                  view.frame.width * 0.471014,
-                                  view.frame.width * 0.169082 ) )
-        
-        let labelConfirmarSenha = UILabel( frame: CGRectMake(50, 100,
-                                           view.frame.width * 0.471014,
-                                           view.frame.width * 0.169082 ) )
-        
-        let labelCadastro = UILabel( frame: CGRectMake(50, 100,
-                                     view.frame.width * 0.471014,
-                                     view.frame.width * 0.169082 ) )
-*/
-        
-        let nomeTextField = UITextField( frame: CGRectMake(100, 200, 325, 40) )
-        let loginTextField = UITextField( frame: CGRectMake(100, 150, 325, 40) )
-        let senhaTextField = UITextField( frame: CGRectMake(100, 100, 325, 40) )
-        let confirmarTextField = UITextField( frame: CGRectMake(100, 150, 325, 40) )
         
         
-        //Configuraçoes caixa de texto nomeTextField vulgo ENTER PASSWORD HERE
-        nomeTextField.placeholder = "Enter your name here"
+        //Configuraçoes caixa de texto nomeTextField
+        nomeTextField.placeholder = "Nome"
         nomeTextField.font = UIFont.systemFontOfSize(15)
         nomeTextField.borderStyle = UITextBorderStyle.RoundedRect
         nomeTextField.autocorrectionType = UITextAutocorrectionType.No
@@ -67,9 +58,11 @@ class ViewCadastro: UIViewController {
         nomeTextField.secureTextEntry = false
         nomeTextField.clearButtonMode = UITextFieldViewMode.WhileEditing;
         nomeTextField.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
-        nomeTextField.center = CGPointMake(view.frame.width/2, (view.frame.height/6))
+        nomeTextField.layer.cornerRadius = 0
+
         
-        loginTextField.placeholder = "Enter your email here"
+        
+        loginTextField.placeholder = "Email"
         loginTextField.font = UIFont.systemFontOfSize(15)
         loginTextField.borderStyle = UITextBorderStyle.RoundedRect
         loginTextField.autocorrectionType = UITextAutocorrectionType.No
@@ -78,9 +71,9 @@ class ViewCadastro: UIViewController {
         loginTextField.secureTextEntry = false
         loginTextField.clearButtonMode = UITextFieldViewMode.WhileEditing;
         loginTextField.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
-        loginTextField.center = CGPointMake(view.frame.width/2, (view.frame.height/6)+50)
+
         
-        senhaTextField.placeholder = "Enter your password"
+        senhaTextField.placeholder = "Senha"
         senhaTextField.font = UIFont.systemFontOfSize(15)
         senhaTextField.borderStyle = UITextBorderStyle.RoundedRect
         senhaTextField.autocorrectionType = UITextAutocorrectionType.No
@@ -89,9 +82,9 @@ class ViewCadastro: UIViewController {
         senhaTextField.secureTextEntry = true
         senhaTextField.clearButtonMode = UITextFieldViewMode.WhileEditing;
         senhaTextField.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
-        senhaTextField.center = CGPointMake(view.frame.width/2, (view.frame.height/6)+120)
+
         
-        confirmarTextField.placeholder = "Confirm your password"
+        confirmarTextField.placeholder = "Confirmar senha"
         confirmarTextField.font = UIFont.systemFontOfSize(15)
         confirmarTextField.borderStyle = UITextBorderStyle.RoundedRect
         confirmarTextField.autocorrectionType = UITextAutocorrectionType.No
@@ -100,40 +93,14 @@ class ViewCadastro: UIViewController {
         confirmarTextField.secureTextEntry = true
         confirmarTextField.clearButtonMode = UITextFieldViewMode.WhileEditing;
         confirmarTextField.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
-        confirmarTextField.center = CGPointMake(view.frame.width/2, (view.frame.height/6)+165)
-        
- /*
-        //configuraçoes dos labels
-        labelNome.center = CGPointMake(view.frame.width/2 - 120, (view.frame.height/6)-20)
-        labelNome.textAlignment = NSTextAlignment.Center
-        labelNome.text = "Nome:"
-        labelNome.textColor = UIColor.blackColor()
-        
-        labelLogin.center = CGPointMake(view.frame.width/2 - 120, (view.frame.height/6)+50)
-        labelLogin.textAlignment = NSTextAlignment.Center
-        labelLogin.text = "Login:"
-        labelLogin.textColor = UIColor.blackColor()
-        
-        labelSenha.center = CGPointMake(view.frame.width/2 - 120, (view.frame.height/6)+120)
-        labelSenha.textAlignment = NSTextAlignment.Center
-        labelSenha.text = "Senha:"
-        labelSenha.textColor = UIColor.blackColor()
-        
-        
-        labelCadastro.center = CGPointMake(view.frame.width/2, (view.frame.height/8) - 40)
-        labelCadastro.textAlignment = NSTextAlignment.Center
-        labelCadastro.text = "CADASTRO"
-        labelCadastro.textColor = UIColor.blackColor()
-*/
+
         
         //Configuraçoes Buttons
-        buttonSalvar.frame = CGRectMake(0,0,
-            view.frame.width * 0.487923, view.frame.width * 0.169082)
-        buttonSalvar.center = CGPointMake(view.frame.width / 2, view.frame.height - 150)
-        buttonSalvar.backgroundColor = self.view.backgroundColor
-        buttonSalvar.setTitle("Salvar", forState: UIControlState.Normal)
+        buttonSalvar.frame = CGRectMake(38, 490, 300, 40)
+        buttonSalvar.backgroundColor = UIColor(red: 115/255, green: 13/255, blue: 13/255, alpha: 1)
+        buttonSalvar.setTitle("CADASTRAR", forState: UIControlState.Normal)
         buttonSalvar.addTarget(self,action: "confirmAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        buttonSalvar.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        buttonSalvar.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
 
     
         // --------------------------- ADICIONANDO NA TELA OS OBJETOS ---------------------------
@@ -145,14 +112,7 @@ class ViewCadastro: UIViewController {
         self.view.addSubview(confirmarTextField)
         self.view.addSubview(buttonSalvar)
         
-/*
-        self.view.addSubview(labelNome)
-        self.view.addSubview(labelLogin)
-        self.view.addSubview(labelSenha)
-        self.view.addSubview(labelConfirmarSenha)
-        self.view.addSubview(labelCadastro)
-*/
-        
+ 
 
         
 
@@ -182,8 +142,17 @@ class ViewCadastro: UIViewController {
     
     // ----------------------------- FUNCAO DO BOTAO CONFIRMAR  --------------------------------
 
+    func voltarAction() {
+        
+        presentViewController(ViewController(), animated: true, completion: nil)
+    }
     
     func confirmAction(sender: UIButton!) {
+        
+        let nomeAux = String(nomeTextField.text)
+        let emailAux = String(loginTextField.text)
+        let senhaAux = String(senhaTextField.text)
+        usuariosArray.append(Usuario(nome: nomeAux, email: emailAux, senha: senhaAux, qtdIngresso: 0))
         
         //event handler with predefined function
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: yesHandler));

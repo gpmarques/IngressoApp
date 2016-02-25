@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A08A8341C7E269A00C333A2 /* Inicializaçao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08A8331C7E269900C333A2 /* Inicializaçao.swift */; };
 		8AB9FE2E1C7B508300BA869A /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9FE2D1C7B508300BA869A /* Classes.swift */; };
 		8AB9FE321C7B6FEA00BA869A /* ViewCadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9FE311C7B6FEA00BA869A /* ViewCadastro.swift */; };
 		8AB9FE361C7B717A00BA869A /* ViewEventos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9FE351C7B717A00BA869A /* ViewEventos.swift */; };
+		8ABA510B1C7F781100B57E8E /* TicketsLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABA510A1C7F781100B57E8E /* TicketsLogo.png */; };
 		D1269B101C7CB9AA00CEB653 /* ViewPalco.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1269B0F1C7CB9AA00CEB653 /* ViewPalco.swift */; };
 		D1412C2F1C7CCF3200EF3D9B /* ViewPagamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1412C2E1C7CCF3200EF3D9B /* ViewPagamento.swift */; };
 		D1412C311C7E2B6F00EF3D9B /* deadpool.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1412C301C7E2B6F00EF3D9B /* deadpool.jpg */; };
@@ -21,9 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A08A8331C7E269900C333A2 /* Inicializaçao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Inicializaçao.swift"; sourceTree = "<group>"; };
 		8AB9FE2D1C7B508300BA869A /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Classes.swift; path = IngressoApp/Classes.swift; sourceTree = "<group>"; };
 		8AB9FE311C7B6FEA00BA869A /* ViewCadastro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewCadastro.swift; path = IngressoApp/ViewCadastro.swift; sourceTree = "<group>"; };
 		8AB9FE351C7B717A00BA869A /* ViewEventos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventos.swift; sourceTree = "<group>"; };
+		8ABA510A1C7F781100B57E8E /* TicketsLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TicketsLogo.png; sourceTree = "<group>"; };
 		D1269B0F1C7CB9AA00CEB653 /* ViewPalco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPalco.swift; sourceTree = "<group>"; };
 		D1412C2E1C7CCF3200EF3D9B /* ViewPagamento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagamento.swift; sourceTree = "<group>"; };
 		D1412C301C7E2B6F00EF3D9B /* deadpool.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = deadpool.jpg; path = ../deadpool.jpg; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				8AB9FE2D1C7B508300BA869A /* Classes.swift */,
+				8A08A8331C7E269900C333A2 /* Inicializaçao.swift */,
 			);
 			name = Classes;
 			path = ..;
@@ -94,6 +99,8 @@
 				D1D17F781C779CB2004745B1 /* Main.storyboard */,
 				D1D17F7B1C779CB2004745B1 /* Assets.xcassets */,
 				D1412C301C7E2B6F00EF3D9B /* deadpool.jpg */,
+
+				8ABA510A1C7F781100B57E8E /* TicketsLogo.png */,
 				D1D17F7D1C779CB2004745B1 /* LaunchScreen.storyboard */,
 				D1D17F801C779CB2004745B1 /* Info.plist */,
 			);
@@ -160,6 +167,7 @@
 			files = (
 				D1D17F7F1C779CB2004745B1 /* LaunchScreen.storyboard in Resources */,
 				D1D17F7C1C779CB2004745B1 /* Assets.xcassets in Resources */,
+				8ABA510B1C7F781100B57E8E /* TicketsLogo.png in Resources */,
 				D1D17F7A1C779CB2004745B1 /* Main.storyboard in Resources */,
 				D1412C311C7E2B6F00EF3D9B /* deadpool.jpg in Resources */,
 			);
@@ -178,6 +186,7 @@
 				D1269B101C7CB9AA00CEB653 /* ViewPalco.swift in Sources */,
 				8AB9FE321C7B6FEA00BA869A /* ViewCadastro.swift in Sources */,
 				D1D17F751C779CB2004745B1 /* AppDelegate.swift in Sources */,
+				8A08A8341C7E269A00C333A2 /* Inicializaçao.swift in Sources */,
 				8AB9FE2E1C7B508300BA869A /* Classes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
