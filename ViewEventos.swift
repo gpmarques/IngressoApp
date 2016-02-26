@@ -14,7 +14,7 @@ class ViewEventos: UIViewController, UICollectionViewDelegateFlowLayout, UIColle
     var navigationBarEventos: UINavigationBar!
     var navigationItemEventos = UINavigationItem()
     let nome = ["Batman"," O hobbit"]
-    let nomeImagem = ["Imagem Batman", "Imagem Hobbit"]
+    let nomeImagem = ["Batman", "Imagem Hobbit"]
     
 
     override func viewDidLoad() {

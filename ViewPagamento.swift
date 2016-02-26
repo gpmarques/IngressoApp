@@ -22,6 +22,7 @@ class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSo
     let textFieldNumeroCartao =  UITextField(frame: CGRectMake(0,0, 200, 40))
     let labelValor =  UILabel(frame: CGRectMake(0,0, 500, 500))
     let labelEvento = UILabel(frame: CGRectMake(0,0, 300,40))
+    let alert = UIAlertController(title: "Sua compra foi realizada com sucesso!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
 
    
     
@@ -55,7 +56,7 @@ class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSo
         labelEvento.center = CGPointMake(view.frame.width/2, view.frame.height/4)
         labelEvento.textAlignment = NSTextAlignment.Center
         labelEvento.textColor = UIColor.blackColor()
-        usuarioLogado.sessaoComprada = sessao
+        usuarioLogado.sessaoComprada = sessaoBatman
         labelEvento.text = "\(usuarioLogado.sessaoComprada.nomeEvento) - Hora: \(usuarioLogado.sessaoComprada.horario)"
         self.view.addSubview(labelEvento)
         
@@ -83,14 +84,7 @@ class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSo
         buttonConfirmar.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         self.view.addSubview(buttonConfirmar)
 
-        func confirmarAction() {
-            
-            //let confirmacaoVC = ViewConfirmacao()
-            //self.navigationController?.pushViewController(confirmacaoVC, animated: true)
-
-           // self.presentViewController(confirmacaoVC, animated: true, completion: nil)
-            
-        }
+        
         
         
 
@@ -106,6 +100,8 @@ class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSo
         
         // Do any additional setup after loading the view.
     }
+    
+
 
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -125,7 +121,26 @@ class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     // ------------------------------------------------ END OF CONFIGURACOES DOS DADOS DO PICKER E SUAS FUNCOES -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- --------
+    
+    
 
+    //----------------------------------------------------------------------------------------------- - CONFIGURAÇOES DO ALERT --------------------------------------------------------------------------- ------------------------
+    
+    func confirmHandler(actionTarget: UIAlertAction){
+        
+        self.presentViewController(ViewEventos(), animated: false, completion: nil)
+        
+    }
+    
+    func confirmarAction() {
+        
+        //let confirmacaoVC = ViewConfirmacao()
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: confirmHandler))
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
+        
+    }
 
     
     override func didReceiveMemoryWarning() {

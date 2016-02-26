@@ -33,12 +33,14 @@ public class Sessao {
     var horario: String!
     let preco = 50
     public var nomeEvento: String!
+    public var imagePath: String!
     
-    init(nomeEvento: String, horario: String,qtdLugaresDisponiveis: Int, lugares: [Lugar]) {
+    init(nomeEvento: String, horario: String,qtdLugaresDisponiveis: Int, lugares: [Lugar], imagem: String) {
         self.nomeEvento = nomeEvento
         self.horario = horario
         self.qtdLugaresDisponiveis = qtdLugaresDisponiveis
         self.lugares = lugares
+        self.imagePath = imagem
     }
     
 }

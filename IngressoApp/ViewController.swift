@@ -12,7 +12,10 @@ import UIKit
 class ViewController: UIViewController {
     
 
+    //DECLARACAO E INICIALIZAÇAO DOS BUTTONS, LABELS, CAIXAS DE TEXTO
     
+    let buttonOk = UIButton(type: UIButtonType.System) as UIButton
+    let buttonCadastro = UIButton(type: UIButtonType.System) as UIButton
     let emailTextField = UITextField(frame: CGRectMake(38, 280, 300, 40))
     let passwordTextField = UITextField(frame: CGRectMake(38, 335, 300, 40))
     let labelErroLogin = UILabel(frame: CGRectMake(0,0, 300, 40))
@@ -29,18 +32,6 @@ class ViewController: UIViewController {
         logo.image = UIImage(named: "TicketsLogo.png")
         self.view.addSubview(logo)
         
-        
-        self.navigationController?.navigationBarHidden = true
-        
-         //DECLARACAO E INICIALIZAÇAO DOS BUTTONS, LABELS, CAIXAS DE TEXTO
-        
-        let buttonOk = UIButton(type: UIButtonType.System) as UIButton
-        let buttonCadastro = UIButton(type: UIButtonType.System) as UIButton
-
-
-//        let labelLogin = UILabel(frame: CGRectMake(50, 50, view.frame.width * 0.471014, view.frame.width * 0.169082))
-//        let labelSenha = UILabel(frame: CGRectMake(50, 100, view.frame.width * 0.471014, view.frame.width * 0.169082))
-
         
         //Configuraçoes caixa de texto emailTextField vulgo ENTER EMAIL HERE
         emailTextField.placeholder              = "username"
@@ -68,7 +59,7 @@ class ViewController: UIViewController {
         
         // Configuracoes label de erro login
         
-        labelErroLogin.center = CGPointMake(view.frame.width / 2, view.frame.height / 2 + 5)
+        labelErroLogin.center = CGPointMake(view.frame.width / 2, view.frame.height / 2 + 200)
         labelErroLogin.textAlignment = NSTextAlignment.Center
         labelErroLogin.textColor = UIColor.blackColor()
         labelErroLogin.text = " "
@@ -100,8 +91,8 @@ class ViewController: UIViewController {
     
     func cadastroAction () {
         
-        let cadastroVC = ViewCadastro()
-        //let cadastroVC = ViewPagamento()
+        //let cadastroVC = ViewCadastro()
+        let cadastroVC = ViewPagamento()
         self.presentViewController(cadastroVC, animated: true, completion: nil)
     
     }
@@ -111,6 +102,19 @@ class ViewController: UIViewController {
         self.presentViewController(self, animated: false, completion: nil)
         
     }
+    
+    // ----------------------------- DECLARACAO DO ALERT QUE CONFIRMA CADASTRO ----------------------
+    
+    
+    let alert = UIAlertController(title: "falha no login, email ou senha incorretos!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
+    
+    
+    func okHandler(actionTarget: UIAlertAction){
+        
+       self.presentViewController(ViewController(), animated: false, completion: nil)
+        
+    }
+
     
     // Funcao que checa se o username e senha estao corretos.
     
@@ -130,8 +134,12 @@ class ViewController: UIViewController {
             }
         }
     
-                labelErroLogin.text = "Usuário e senha inválidos"
-            
+        //event handler with predefined function
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: okHandler));
+        
+        presentViewController(alert, animated: true, completion: nil);
+
+        
     }
 
     override func didReceiveMemoryWarning() {

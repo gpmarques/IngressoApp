@@ -124,34 +124,73 @@ class ViewCadastro: UIViewController {
     // ----------------------------- DECLARACAO DO ALERT QUE CONFIRMA CADASTRO ----------------------
     
     
-    let alert = UIAlertController(title: "Seu cadastro foi realizado com sucesso", message: "", preferredStyle: UIAlertControllerStyle.Alert);
+    let alert = UIAlertController(title: "Seu cadastro foi realizado com sucesso", message: "", preferredStyle: UIAlertControllerStyle.Alert)
 
+    let alert2 = UIAlertController(title: "email já cadastrado!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+    
+    let alert3 =  UIAlertController(title: "Campo vazio ou senha e confirma senha estão diferentes!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
     
     func yesHandler(actionTarget: UIAlertAction){
         
         self.presentViewController(ViewEventos(), animated: true, completion: nil)
     
     }
+    
+    func noHandler(actionTarget: UIAlertAction) {
+        
+        self.presentViewController(ViewCadastro(), animated: false, completion: nil)
+        
+    }
 
     
-    // ----------------------------- FUNCAO DO BOTAO CONFIRMAR  --------------------------------
-
+    
     func voltarAction() {
         
         presentViewController(ViewController(), animated: true, completion: nil)
     }
     
+    func incompleteHandler(actionTarget: UIAlertAction) {
+        
+        presentViewController(ViewCadastro(), animated: false, completion: nil)
+        
+    }
+    
+    
+    // ----------------------------- FUNCAO DO BOTAO CONFIRMAR  --------------------------------
+
+    
     func confirmAction(sender: UIButton!) {
         
         let nomeAux = String(nomeTextField.text)
-        let emailAux = String(loginTextField.text)
+        let emailAux = String(loginTextField.text!)
         let senhaAux = String(senhaTextField.text)
+        let confirmaAux = String(confirmarTextField.text)
+        if(nomeAux == "" || emailAux == "" || senhaAux == "" || senhaAux != confirmaAux) {
+            
+            presentViewController(alert3, animated: true, completion: nil)
+            alert3.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: incompleteHandler))
+            return
+
+            
+            
+        }
+        for usuarios in usuariosArray {
+            print(usuarios.getEmail())
+            print(emailAux)
+            if emailAux == usuarios.getEmail()  {
+                print("entrou no if")
+                presentViewController(alert2, animated: true, completion: nil)
+                alert2.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: noHandler))
+                return
+
+            }
+        }
         usuariosArray.append(Usuario(nome: nomeAux, email: emailAux, senha: senhaAux, qtdIngresso: 0))
         
         //event handler with predefined function
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: yesHandler));
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: yesHandler))
         
-        presentViewController(alert, animated: true, completion: nil);
+        presentViewController(alert, animated: true, completion: nil)
     }
 
 
