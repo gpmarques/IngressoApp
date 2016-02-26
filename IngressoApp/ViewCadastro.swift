@@ -132,7 +132,7 @@ class ViewCadastro: UIViewController {
     
     func yesHandler(actionTarget: UIAlertAction){
         
-        self.presentViewController(ViewEventos(), animated: true, completion: nil)
+        self.presentViewController(ViewController(), animated: true, completion: nil)
     
     }
     
@@ -161,10 +161,11 @@ class ViewCadastro: UIViewController {
     
     func confirmAction(sender: UIButton!) {
         
-        let nomeAux = String(nomeTextField.text)
+        let nomeAux = String(nomeTextField.text!)
         let emailAux = String(loginTextField.text!)
-        let senhaAux = String(senhaTextField.text)
-        let confirmaAux = String(confirmarTextField.text)
+        let senhaAux = String(senhaTextField.text!)
+        let confirmaAux = String(confirmarTextField.text!)
+        
         if(nomeAux == "" || emailAux == "" || senhaAux == "" || senhaAux != confirmaAux) {
             
             presentViewController(alert3, animated: true, completion: nil)
@@ -192,16 +193,5 @@ class ViewCadastro: UIViewController {
         
         presentViewController(alert, animated: true, completion: nil)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

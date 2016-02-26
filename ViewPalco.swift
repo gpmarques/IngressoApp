@@ -65,10 +65,10 @@ class ViewPalco: UIViewController, ZSeatSelectorDelegate {
 
         
         let map:String =    "AAAAA_AAAAA/" +
-            "AAAAA_AAAAA/" +
-            "AAAAA_AAAAA/" +
-            "AAAAA_AAAAA/" +
-        "AAAAA_AAAAA/";
+                            "AAAAA_AAAAA/" +
+                            "AAAAA_AAAAA/" +
+                            "AAAAA_AAAAA/" +
+                            "AAAAA_AAAAA/";
         
         let seats = ZSeatSelector()
         seats.frame = CGRectMake(30, 340, 315, 200)

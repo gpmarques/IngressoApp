@@ -89,10 +89,10 @@ class ViewController: UIViewController {
     }
 
     
+    
     func cadastroAction () {
         
-        //let cadastroVC = ViewCadastro()
-        let cadastroVC = ViewPagamento()
+        let cadastroVC = ViewCadastro()
         self.presentViewController(cadastroVC, animated: true, completion: nil)
     
     }

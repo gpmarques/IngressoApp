@@ -31,9 +31,6 @@ class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSo
     let labelEvento = UILabel(frame: CGRectMake(0,0, 300,500))
     let alert = UIAlertController(title: "Sua compra foi realizada com sucesso!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
     let alert2 = UIAlertController(title: "Dados do cartão incorretos!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-
-
-   
     
     override func viewDidLoad() {
         
