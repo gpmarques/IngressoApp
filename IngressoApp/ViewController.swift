@@ -106,7 +106,7 @@ class ViewController: UIViewController {
     // ----------------------------- DECLARACAO DO ALERT QUE CONFIRMA CADASTRO ----------------------
     
     
-    let alert = UIAlertController(title: "falha no login, email ou senha incorretos!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
+    let alert = UIAlertController(title: "falha no login, email ou senha incorretos!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
     
     
     func okHandler(actionTarget: UIAlertAction){
@@ -126,9 +126,7 @@ class ViewController: UIViewController {
         
         for usuarios in usuariosArray {
             if(usuarios.getEmail() == username && usuarios.getSenha() == password) {
-                usuarioLogado.nome = usuarios.nome
-                usuarioLogado.setSenha(password)
-                usuarioLogado.setEmail(username)
+                usuarioLogado = Usuario(nome: usuarios.nome, email: usuarios.getEmail(), senha: usuarios.getSenha(), qtdIngresso: 0)
                 self.presentViewController(eventosVC, animated: true, completion: nil)
                 return
             }

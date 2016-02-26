@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var nomeSessaoCorrente: String!
+    var horarioSessaoCorrente: String!
 
     var pickerTextField = UITextField(  frame: CGRect(x: 35, y: 400,
                                         width: 200, height: 40 ) )
@@ -20,9 +23,11 @@ class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSo
     let confirmacaoDados = UILabel(frame: CGRectMake(0,0, 300, 40))
     let labelNome = UILabel(frame: CGRectMake(0,0, 500, 500))
     let textFieldNumeroCartao =  UITextField(frame: CGRectMake(0,0, 200, 40))
-    let labelValor =  UILabel(frame: CGRectMake(0,0, 500, 500))
-    let labelEvento = UILabel(frame: CGRectMake(0,0, 300,40))
+    let labelValor =  UILabel(frame: CGRectMake(0,0, 500, 40))
+    let labelEvento = UILabel(frame: CGRectMake(0,0, 300,500))
     let alert = UIAlertController(title: "Sua compra foi realizada com sucesso!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+    let alert2 = UIAlertController(title: "Dados do cartão incorretos!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+
 
    
     
@@ -57,7 +62,7 @@ class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSo
         labelEvento.textAlignment = NSTextAlignment.Center
         labelEvento.textColor = UIColor.blackColor()
         usuarioLogado.sessaoComprada = sessaoBatman
-        labelEvento.text = "\(usuarioLogado.sessaoComprada.nomeEvento) - Hora: \(usuarioLogado.sessaoComprada.horario)"
+        labelEvento.text = nomeSessaoCorrente + "\n" + "Hora: " + horarioSessaoCorrente
         self.view.addSubview(labelEvento)
         
         // Configuracoes text field de numero do cartao
@@ -132,13 +137,31 @@ class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
+    func cartaoErrorHandler(actionTarget: UIAlertAction){
+        
+        self.presentViewController(self, animated: false, completion: nil)
+        
+    }
+    
     func confirmarAction() {
         
-        //let confirmacaoVC = ViewConfirmacao()
+       
+        if(textFieldNumeroCartao.text != "" && (pickerTextField.text == "Amex" || pickerTextField.text == "Mastercard" || pickerTextField.text == "Visa")) {
+        
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: confirmHandler))
         
         presentViewController(alert, animated: true, completion: nil)
+            
+            return
         
+        }
+        else {
+            
+            alert2.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: confirmHandler))
+            
+            presentViewController(alert2, animated: true, completion: nil)
+            return
+        }
         
     }
 

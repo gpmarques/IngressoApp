@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8A08A8341C7E269A00C333A2 /* Inicializaçao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08A8331C7E269900C333A2 /* Inicializaçao.swift */; };
+		8A61FC951C80AF7100DE7B60 /* RDCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A61FC941C80AF7100DE7B60 /* RDCell.swift */; };
+		8A61FC971C80BC7900DE7B60 /* ZSeatSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A61FC961C80BC7900DE7B60 /* ZSeatSelector.swift */; };
+		8A61FCA11C80BD3500DE7B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A61FCA01C80BD3500DE7B60 /* Assets.xcassets */; };
+		8A61FCAB1C80D56300DE7B60 /* D@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A61FCAA1C80D56300DE7B60 /* D@2x.png */; };
 		8AB9FE2E1C7B508300BA869A /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9FE2D1C7B508300BA869A /* Classes.swift */; };
 		8AB9FE321C7B6FEA00BA869A /* ViewCadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9FE311C7B6FEA00BA869A /* ViewCadastro.swift */; };
 		8AB9FE361C7B717A00BA869A /* ViewEventos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9FE351C7B717A00BA869A /* ViewEventos.swift */; };
@@ -17,12 +21,15 @@
 		D1D17F751C779CB2004745B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D17F741C779CB2004745B1 /* AppDelegate.swift */; };
 		D1D17F771C779CB2004745B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D17F761C779CB2004745B1 /* ViewController.swift */; };
 		D1D17F7A1C779CB2004745B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1D17F781C779CB2004745B1 /* Main.storyboard */; };
-		D1D17F7C1C779CB2004745B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1D17F7B1C779CB2004745B1 /* Assets.xcassets */; };
 		D1D17F7F1C779CB2004745B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1D17F7D1C779CB2004745B1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8A08A8331C7E269900C333A2 /* Inicializaçao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Inicializaçao.swift"; sourceTree = "<group>"; };
+		8A61FC941C80AF7100DE7B60 /* RDCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDCell.swift; sourceTree = "<group>"; };
+		8A61FC961C80BC7900DE7B60 /* ZSeatSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSeatSelector.swift; sourceTree = "<group>"; };
+		8A61FCA01C80BD3500DE7B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A61FCAA1C80D56300DE7B60 /* D@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "D@2x.png"; sourceTree = "<group>"; };
 		8AB9FE2D1C7B508300BA869A /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Classes.swift; path = IngressoApp/Classes.swift; sourceTree = "<group>"; };
 		8AB9FE311C7B6FEA00BA869A /* ViewCadastro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewCadastro.swift; path = IngressoApp/ViewCadastro.swift; sourceTree = "<group>"; };
 		8AB9FE351C7B717A00BA869A /* ViewEventos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventos.swift; sourceTree = "<group>"; };
@@ -33,7 +40,6 @@
 		D1D17F741C779CB2004745B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1D17F761C779CB2004745B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = IngressoApp/ViewController.swift; sourceTree = "<group>"; };
 		D1D17F791C779CB2004745B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D1D17F7B1C779CB2004745B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1D17F7E1C779CB2004745B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1D17F801C779CB2004745B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,13 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8AB9FE331C7B701C00BA869A /* Classes */ = {
+		8AB9FE331C7B701C00BA869A /* Auxiliares */ = {
 			isa = PBXGroup;
 			children = (
+				8A61FC961C80BC7900DE7B60 /* ZSeatSelector.swift */,
 				8AB9FE2D1C7B508300BA869A /* Classes.swift */,
 				8A08A8331C7E269900C333A2 /* Inicializaçao.swift */,
 			);
-			name = Classes;
+			name = Auxiliares;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,7 @@
 				8AB9FE351C7B717A00BA869A /* ViewEventos.swift */,
 				D1412C2E1C7CCF3200EF3D9B /* ViewPagamento.swift */,
 				D1269B0F1C7CB9AA00CEB653 /* ViewPalco.swift */,
+				8A61FC941C80AF7100DE7B60 /* RDCell.swift */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -92,10 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				8AB9FE341C7B714B00BA869A /* ViewControllers */,
-				8AB9FE331C7B701C00BA869A /* Classes */,
+				8AB9FE331C7B701C00BA869A /* Auxiliares */,
 				D1D17F741C779CB2004745B1 /* AppDelegate.swift */,
 				D1D17F781C779CB2004745B1 /* Main.storyboard */,
-				D1D17F7B1C779CB2004745B1 /* Assets.xcassets */,
+				8A61FCA01C80BD3500DE7B60 /* Assets.xcassets */,
+				8A61FCAA1C80D56300DE7B60 /* D@2x.png */,
 				8ABA510A1C7F781100B57E8E /* TicketsLogo.png */,
 				D1D17F7D1C779CB2004745B1 /* LaunchScreen.storyboard */,
 				D1D17F801C779CB2004745B1 /* Info.plist */,
@@ -162,8 +171,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1D17F7F1C779CB2004745B1 /* LaunchScreen.storyboard in Resources */,
-				D1D17F7C1C779CB2004745B1 /* Assets.xcassets in Resources */,
 				8ABA510B1C7F781100B57E8E /* TicketsLogo.png in Resources */,
+				8A61FCAB1C80D56300DE7B60 /* D@2x.png in Resources */,
+				8A61FCA11C80BD3500DE7B60 /* Assets.xcassets in Resources */,
 				D1D17F7A1C779CB2004745B1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +190,8 @@
 				8AB9FE361C7B717A00BA869A /* ViewEventos.swift in Sources */,
 				D1269B101C7CB9AA00CEB653 /* ViewPalco.swift in Sources */,
 				8AB9FE321C7B6FEA00BA869A /* ViewCadastro.swift in Sources */,
+				8A61FC951C80AF7100DE7B60 /* RDCell.swift in Sources */,
+				8A61FC971C80BC7900DE7B60 /* ZSeatSelector.swift in Sources */,
 				D1D17F751C779CB2004745B1 /* AppDelegate.swift in Sources */,
 				8A08A8341C7E269A00C333A2 /* Inicializaçao.swift in Sources */,
 				8AB9FE2E1C7B508300BA869A /* Classes.swift in Sources */,

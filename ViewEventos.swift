@@ -13,8 +13,10 @@ class ViewEventos: UIViewController, UICollectionViewDelegateFlowLayout, UIColle
     var collectionView: UICollectionView!
     var navigationBarEventos: UINavigationBar!
     var navigationItemEventos = UINavigationItem()
-    let nome = ["Batman"," O hobbit"]
-    let nomeImagem = ["Batman", "Imagem Hobbit"]
+    let nome = [sessaoBatman.nomeEvento,sessaoSkyFall.nomeEvento]
+    let nomeImagem = [sessaoBatman.imagePath, sessaoSkyFall.imagePath]
+    let horario = [sessaoBatman.horario,sessaoSkyFall.horario]
+    let salas = ["Sala 1", "Sala 2"]
     
 
     override func viewDidLoad() {
@@ -25,9 +27,9 @@ class ViewEventos: UIViewController, UICollectionViewDelegateFlowLayout, UIColle
         let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 96, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: self.view.frame.width, height: 200)
-        layout.minimumLineSpacing = 81
+        layout.sectionInset = UIEdgeInsets(top: 80, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 340, height: 240)
+        layout.minimumLineSpacing = 20
         
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.dataSource = self
@@ -39,7 +41,7 @@ class ViewEventos: UIViewController, UICollectionViewDelegateFlowLayout, UIColle
         navigationBarEventos = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 44 + statusBarHeight))
         navigationItemEventos.title = "Eventos"
         
-        navigationBarEventos.backgroundColor = UIColor(red: 255/255, green: 252/255, blue: 243/255, alpha: 1)
+        navigationBarEventos.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 223/255, alpha: 1)
         navigationBarEventos.items = [navigationItemEventos]
         self.view.addSubview(navigationBarEventos)
         
@@ -53,58 +55,36 @@ class ViewEventos: UIViewController, UICollectionViewDelegateFlowLayout, UIColle
      func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath ) -> UICollectionViewCell{
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! RDCell
-
-        cell.textLabel.text = nome[indexPath.row]
+        cell.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 223/255, alpha: 1)
+        cell.titulo.text = nome[indexPath.row]
+        cell.local.text = salas[indexPath.row]
+        cell.horario.text = horario[indexPath.row]
         cell.imageView.image = UIImage(named: nomeImagem[indexPath.row])
-    
+        cell.buyButton.tag = indexPath.row
+        cell.buyButton.addTarget(self, action: "comprarAction:", forControlEvents: UIControlEvents.TouchUpInside)
         
         return cell
     
     }
+    
+    func comprarAction(sender:UIButton) {
+        
+        let vc = ViewPalco()
+        vc.imagemSessao.image =  UIImage(named: nomeImagem[sender.tag])
+        vc.titulo = nome[sender.tag]
+        vc.sala = salas[sender.tag]
+        vc.horario = horario[sender.tag]
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    class RDCell: UICollectionViewCell {
-       
-        
-        var textLabel: UILabel!
-        var imageView: UIImageView!
-        var buyButton: UIButton!
-        
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            
-            imageView = UIImageView(frame: CGRect(x: 18, y: 0, width: 340, height: 159))
-            imageView.contentMode = UIViewContentMode.ScaleAspectFit
-            contentView.addSubview(imageView)
-            
-            textLabel = UILabel(frame: CGRect(x: 2, y: imageView.frame.size.height , width: 340, height: 85
-                ))
-            textLabel.center = CGPointMake(frame.size.width/2, frame.size.height)
-            textLabel.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize())
-            textLabel.textAlignment = .Left
-            textLabel.backgroundColor =  UIColor(red: 255/255, green: 252/255, blue: 243/255, alpha: 1)
-            textLabel.textColor = UIColor.blackColor()
-            contentView.addSubview(textLabel)
-            
-            buyButton = UIButton(frame: CGRect(x: 227, y: 200, width: 105, height: 30))
-            buyButton.backgroundColor = UIColor(red: 115/255, green: 13/255, blue: 13/255, alpha: 1)
-            buyButton.setTitle("COMPRAR", forState: UIControlState.Normal)
-
-            
-            contentView.addSubview(buyButton)
-            
-        }
-
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-        
-    
-    }
-
 
 }
+
+

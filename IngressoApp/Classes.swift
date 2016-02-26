@@ -10,36 +10,18 @@ import Foundation
 
 import UIKit
 
-public struct Lugar {
-    
-    var fileira: Character!
-    var numero: Int!
-    var estaOcupado: Bool
-    var estaMarcado: Bool
-    
-    init(fileira: Character, numero: Int) {
-        self.fileira = fileira
-        self.numero = numero
-        self.estaOcupado = false
-        self.estaMarcado = false
-    }
-    
-}
-
 public class Sessao {
     
-    public var lugares: [Lugar]!
     public var qtdLugaresDisponiveis: Int!
     var horario: String!
     let preco = 50
     public var nomeEvento: String!
     public var imagePath: String!
     
-    init(nomeEvento: String, horario: String,qtdLugaresDisponiveis: Int, lugares: [Lugar], imagem: String) {
+    init(nomeEvento: String, horario: String,qtdLugaresDisponiveis: Int, imagem: String) {
         self.nomeEvento = nomeEvento
         self.horario = horario
         self.qtdLugaresDisponiveis = qtdLugaresDisponiveis
-        self.lugares = lugares
         self.imagePath = imagem
     }
     
@@ -85,17 +67,5 @@ public class Usuario {
         return self.senha
     }
     
-    func ocuparLugar(fileira: Character, numero: Int, sessao: Sessao) {
-        
-        if(sessao.qtdLugaresDisponiveis > 0) {
-            
-            for i in 0...sessao.lugares.count {
-                if(sessao.lugares[i].fileira == fileira && sessao.lugares[i].numero == numero && !sessao.lugares[i].estaMarcado && !sessao.lugares[i].estaOcupado) {
-                    sessao.lugares[i].estaMarcado = true
-                    sessao.lugares[i].estaOcupado = true
-                }
-            }
-        }
-    }
 }
 
