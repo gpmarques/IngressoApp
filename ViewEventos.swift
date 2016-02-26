@@ -71,9 +71,9 @@ class ViewEventos: UIViewController, UICollectionViewDelegateFlowLayout, UIColle
         
         let vc = ViewPalco()
         vc.imagemSessao.image =  UIImage(named: nomeImagem[sender.tag])
-        vc.titulo = nome[sender.tag]
-        vc.sala = salas[sender.tag]
-        vc.horario = horario[sender.tag]
+        vc.labelTitulo.text = nome[sender.tag]
+        vc.labelSala.text = salas[sender.tag]
+        vc.labelHorario.text = horario[sender.tag]
         self.presentViewController(vc, animated: true, completion: nil)
         
     }

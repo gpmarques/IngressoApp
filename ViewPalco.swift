@@ -10,7 +10,7 @@ import UIKit
 
 class ViewPalco: UIViewController, ZSeatSelectorDelegate {
     
-    let imagemSessao = UIImageView(frame: CGRectMake(0,64,375,175))
+    var imagemSessao = UIImageView(frame: CGRectMake(0,64,375,175))
     var titulo: String!
     var horario: String!
     var sala: String!
@@ -22,15 +22,16 @@ class ViewPalco: UIViewController, ZSeatSelectorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor(red: 255/255, green: 252/255, blue: 243/255, alpha: 1)
 
-        labelTitulo.text = titulo
+        //labelTitulo.text = titulo
         labelTitulo.textColor = UIColor(red: 115/255, green: 13/255, blue: 13/255, alpha: 1)
         
-        labelHorario.text = horario
+        //labelHorario.text = horario
         labelHorario.textColor = UIColor.blackColor()
         
-        labelSala.text = sala
+        //labelSala.text = sala
         labelSala.textColor = UIColor.blackColor()
         
         //Configuraçoes BUTTON CONFIRMACAO
@@ -125,11 +126,10 @@ class ViewPalco: UIViewController, ZSeatSelectorDelegate {
     func confirmacaoAction() {
         
         let vc = ViewPagamento()
-
+        
+        vc.imagem = imagemSessao.image
         vc.nomeSessaoCorrente = labelTitulo.text
         vc.horarioSessaoCorrente = labelHorario.text
-        print(vc.nomeSessaoCorrente)
-        print(horario)
         
         self.presentViewController(vc, animated: true, completion: nil)
         

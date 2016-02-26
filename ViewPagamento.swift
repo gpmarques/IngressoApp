@@ -12,6 +12,10 @@ class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSo
     
     var nomeSessaoCorrente: String!
     var horarioSessaoCorrente: String!
+    var imagem: UIImage!
+    
+    var retView = UIView(frame: CGRectMake(18, 80, 340, 200))
+
 
     var pickerTextField = UITextField(  frame: CGRect(x: 35, y: 400,
                                         width: 200, height: 40 ) )
@@ -35,6 +39,25 @@ class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSo
         
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 255/255, green: 252/255, blue: 243/255, alpha: 1)
+        
+        retView.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(retView)
+        
+        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 44+statusBarHeight)) // Offset by 20 pixels vertically to take the status bar into account
+        let navigationItem = UINavigationItem()
+        navigationItem.title = "Pagamento"
+        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: "voltarAction:")
+        navigationItem.leftBarButtonItem = leftButton
+        
+        self.title = "Pagamento"
+        
+        //CONFIGURACOES NAVIGATION BAR
+        navigationBar.backgroundColor = UIColor(red: 255/255, green: 252/255, blue: 243/255, alpha: 1)
+        navigationBar.items = [navigationItem]
+        self.view.addSubview(navigationBar)
+   
+        self.view.addSubview(navigationBar)
         
         // Configuracoes label de confirmacao de dados
         confirmacaoDados.center = CGPointMake(view.frame.width/2, view.frame.height/8)
@@ -162,6 +185,22 @@ class ViewPagamento: UIViewController , UIPickerViewDelegate, UIPickerViewDataSo
             presentViewController(alert2, animated: true, completion: nil)
             return
         }
+        
+    }
+    
+    func voltarAction(sender: AnyObject) {
+        
+        let palco = ViewPalco()
+        
+        
+        
+        palco.imagemSessao.image = imagem
+        palco.labelTitulo.text = nomeSessaoCorrente
+        palco.labelHorario.text = horarioSessaoCorrente
+        
+        print(nomeSessaoCorrente)
+        print(horarioSessaoCorrente)
+        self.presentViewController(palco, animated: true, completion: nil)
         
     }
 
