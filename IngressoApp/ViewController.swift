@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         
         
         //Configuraçoes caixa de texto emailTextField vulgo ENTER EMAIL HERE
-        emailTextField.placeholder              = "username"
+        emailTextField.placeholder              = "Email"
         emailTextField.font                     = UIFont.systemFontOfSize(15)
         emailTextField.borderStyle              = UITextBorderStyle.RoundedRect
         emailTextField.autocorrectionType       = UITextAutocorrectionType.No
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         
        
          //Configuraçoes caixa de texto passwordTextField vulgo ENTER PASSWORD HERE
-        passwordTextField.placeholder = "password"
+        passwordTextField.placeholder = "Senha"
         passwordTextField.font = UIFont.systemFontOfSize(15)
         passwordTextField.borderStyle = UITextBorderStyle.RoundedRect
         passwordTextField.autocorrectionType = UITextAutocorrectionType.No

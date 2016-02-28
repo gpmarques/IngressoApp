@@ -18,6 +18,8 @@ class ViewPalco: UIViewController, ZSeatSelectorDelegate {
     let labelHorario = UILabel(frame: CGRectMake(30, 310, 315, 20))
     let labelSala = UILabel(frame: CGRectMake(30, 288, 315, 20))
     let button = UIButton(frame: CGRectMake(32, 607, 315, 40))
+    var tela = UILabel(frame: CGRectMake(72, 500, 231, 30))
+
 
     
     override func viewDidLoad() {
@@ -33,6 +35,12 @@ class ViewPalco: UIViewController, ZSeatSelectorDelegate {
         
         //labelSala.text = sala
         labelSala.textColor = UIColor.blackColor()
+        
+        tela.backgroundColor = UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 1)
+        tela.textAlignment = NSTextAlignment.Center
+        tela.textColor = UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+        tela.text = "T E L A"
+        self.view.addSubview(tela)
         
         //Configuraçoes BUTTON CONFIRMACAO
         button.backgroundColor = UIColor(red: 115/255, green: 13/255, blue: 13/255, alpha: 1)
@@ -64,14 +72,14 @@ class ViewPalco: UIViewController, ZSeatSelectorDelegate {
         self.view.addSubview(navigationBar)
 
         
-        let map:String =    "AAAAA_AAAAA/" +
+        let map:String =    "AAAAA_AUUUA/" +
+                            "AUUAA_AAAAA/" +
                             "AAAAA_AAAAA/" +
-                            "AAAAA_AAAAA/" +
-                            "AAAAA_AAAAA/" +
+                            "AAAAA_AAUUA/" +
                             "AAAAA_AAAAA/";
         
         let seats = ZSeatSelector()
-        seats.frame = CGRectMake(30, 340, 315, 200)
+        seats.frame = CGRectMake(30, 390, 315, 200)
         seats.setSeatSize(CGSize(width: 20, height: 20))
         seats.setAvailableImage(UIImage(named: "A")!,
             andUnavailableImage:UIImage(named: "U")!,

@@ -13,10 +13,10 @@ class ViewEventos: UIViewController, UICollectionViewDelegateFlowLayout, UIColle
     var collectionView: UICollectionView!
     var navigationBarEventos: UINavigationBar!
     var navigationItemEventos = UINavigationItem()
-    let nome = [sessaoBatman.nomeEvento,sessaoSkyFall.nomeEvento]
-    let nomeImagem = [sessaoBatman.imagePath, sessaoSkyFall.imagePath]
-    let horario = [sessaoBatman.horario,sessaoSkyFall.horario]
-    let salas = ["Sala 1", "Sala 2"]
+    let nome = [sessaoBatman.nomeEvento,sessaoSkyFall.nomeEvento, sessaoVingadores.nomeEvento]
+    let nomeImagem = [sessaoBatman.imagePath, sessaoSkyFall.imagePath, sessaoVingadores.imagePath]
+    let horario = [sessaoBatman.horario,sessaoSkyFall.horario, sessaoVingadores.horario]
+    let salas = ["Sala 1", "Sala 2", "Sala 4"]
     
 
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class ViewEventos: UIViewController, UICollectionViewDelegateFlowLayout, UIColle
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     
